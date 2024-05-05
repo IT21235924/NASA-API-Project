@@ -39,7 +39,7 @@ const Home = () => {
 
           <div className="w-full flex-col my-4">
             <button className="w-full text-white my-2 font-semibold bg-[#0099ff] rounded-md p-4 text-center flex item-center justify-center">
-              <SignInButton mode="modal" forceRedirectUrl={'/dashboard'}/>
+              <SignInButton mode="modal" forceRedirectUrl={'/'}/>
             </button>
           </div>
         </div>

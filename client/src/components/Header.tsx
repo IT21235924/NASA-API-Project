@@ -1,4 +1,5 @@
-import { UserButton } from "@clerk/clerk-react";
+import { SignedIn, SignedOut, RedirectToSignIn, SignInButton, UserButton } from "@clerk/clerk-react";
+
 
 import NASA_LOGO from "/nasa.svg";
 import { Link } from "react-router-dom";
@@ -11,8 +12,13 @@ const Header = () => {
             <p className="text-xl font-semibold">NASA API Project</p>
         </div>
         <div className="flex items-center gap-5">
-            <Link to='/dashboard'>Home</Link>
-            <UserButton/>
+            <Link to='/'>Home</Link>
+            <SignedOut>
+              <Link to='/signin'>Sign In</Link>
+            </SignedOut>
+            <SignedIn>
+              <UserButton/>
+            </SignedIn>
         </div>
     </div>
   );
