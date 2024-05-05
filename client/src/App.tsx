@@ -24,7 +24,8 @@ const router = createBrowserRouter(
       <Route index element={<Home />} />
       <Route path="/apod" element={<Homepage />} />
       <Route path="/mrp" element={<Mrp />} />
-      <Route
+      <Route path="/dashboard" element={<Dashboard />} />
+      {/* <Route
         path="/dashboard"
         element={
           <>
@@ -37,7 +38,7 @@ const router = createBrowserRouter(
             </SignedOut>
           </>
         }
-      />
+      /> */}
     </>
   )
 );

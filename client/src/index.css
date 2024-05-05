@@ -17,6 +17,12 @@
 }
 
 #root {
+  /* min-height: 100vh;
+  display: flex; */
+  display: relative;
+}
+
+.bodyRoot {
   min-height: 100vh;
   display: flex;
   display: relative;
@@ -54,6 +60,7 @@ footer {
 footer div {
   display: flex;
   flex-direction: column;
+  gap: 0.5rem;
 }
 
 footer h2 {
@@ -156,7 +163,7 @@ footer button:hover {
 .discriptionContainer {
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
+  gap: 1rem;
 }
 
 .loadingState {
@@ -169,7 +176,7 @@ footer button:hover {
 .loadingState i {
   opacity: 0.2;
   font-size: 3rem;
-  animation: spin 1s linear infinite;
+  animation: spin 2s linear infinite;
 }
 
 @keyframes spin {
@@ -186,7 +193,7 @@ footer button:hover {
     position: relative;
     inset: unset;
     min-width: 30%;
-    box-shadow: 0 0 40px 1px #030615;
+    box-shadow: 0 0 40px 5px #030615;
   }
 
   .sidebarContents {

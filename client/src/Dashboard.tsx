@@ -1,7 +1,8 @@
-import { UserButton } from "@clerk/clerk-react";
+import { SignedIn, SignedOut, UserButton } from "@clerk/clerk-react";
 
 import Header from "./components/Header";
 import MainLO from "./components/MainLO";
+import MainLI from "./components/MainLI";
 
 const Dashboard = () => {
   return (
@@ -12,7 +13,13 @@ const Dashboard = () => {
     <>
       <Header/>
 
-      <MainLO/>
+      <SignedOut>
+        <MainLO/>
+      </SignedOut>
+
+      <SignedIn>
+        <MainLI/>
+      </SignedIn>
 
     </>
     
