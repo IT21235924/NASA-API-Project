@@ -9,10 +9,10 @@ const SideBar = (props:any) => {
       <div onClick={handleToggleModel} className="bgOverlay"></div>
       <div className="sidebarContents">
 
-        <h2><u>{data?.title}</u></h2>
+        <h2>{data?.title}</h2>
         <div className="discriptionContainer">
           <p className="discriptionTitle">{data?.date}</p>
-          <p className="explanation">{data?.explanation}</p>
+          <p>{data?.explanation}</p>
         </div>
 
         <button onClick={handleToggleModel}>

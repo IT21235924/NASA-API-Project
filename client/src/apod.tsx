@@ -1,68 +1,54 @@
-import React from "react";
-import Main from "./components/APOD/Main";
-import Footer from "./components/APOD/Footer";
-import SideBar from "./components/APOD/SideBar";
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
+import Header from "./components/Header";
+import Gallery from "./components/APOD/Gallery";
 
 const Homepage = () => {
-  const [data, setData] = useState(null)
-  const [loading, setLoading] = useState(false)
-  const [showModel, setShowModel] = useState(false)
+  const [data, setData] = useState(null);
+  const [loading, setLoading] = useState(false);
+  const [showModel, setShowModel] = useState(false);
+  const [imagesUrl, setImagesUrl] = useState([]);
 
   function handleToggleModel() {
-      console.log('toogle click')
-      setShowModel(!showModel)
+    console.log("toggle click");
+    setShowModel(!showModel);
   }
 
   useEffect(() => {
-      async function fetchAPIData() {
+    async function fetchAPIData() {
+      const API_KEY = import.meta.env.VITE_NASA_API_KEY;
+      const url =
+        "https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?sol=1000&api_key=" +
+        `${API_KEY}`;
 
-          const API_KEY = import.meta.env.VITE_NASA_API_KEY
-          const url = 'https://api.nasa.gov/planetary/apod' + `?api_key=${API_KEY}`
-
-        //   const today = (new Date()).toDateString()
-        //   const localKey = `NASA-${today}`
-        //   if (localStorage.getItem(localKey)) {
-        //       // const apiData = JSON.parse(localStorage.getItem(localKey))
-        //       const apiData = JSON.parse(localStorage.getItem(localKey) || "");
-        //       setData(apiData)
-        //       console.log('Fetched from cache today')
-        //       return
-        //   }
-        //   localStorage.clear()
-
-          try {
-
-              const res = await fetch(url)
-              const apiData = await res.json()
-            //   localStorage.setItem(localKey, JSON.stringify(apiData))
-              setData(apiData)
-              console.log('Fetched from API today')
-
-          } catch (error) {
-              console.log(error)
-          }
+      try {
+        const res = await fetch(url);
+        const apiData = await res.json();
+        const photos = apiData.photos;
+        const urls = photos.map((photo: { img_src: any; }) => photo.img_src);
+        setImagesUrl(urls);
+        setData(apiData);
+        console.log("Fetched from API today");
+      } catch (error) {
+        console.log(error);
       }
+    }
 
-      fetchAPIData()
+    fetchAPIData();
+  }, []);
 
-  }, [])
   return (
-      <>
+    <>
+      <Header />
+
       <div className="bodyRoot">
-          {data ? (<Main data={data} />) : (
-              <div className="loadingState">
-                  <i className="fa-solid fa-gear"></i>
-              </div>
-          )}
-
-          {showModel && (
-              <SideBar data={data} handleToggleModel={handleToggleModel} />
-          )}
-
-          {data && (<Footer data={data} handleToggleModel={handleToggleModel} />)}
+        {data ?(<Gallery data={imagesUrl} />) : (
+          <div className="loadingState">
+          <i className="fa-solid fa-sun"></i>
         </div>
-      </>
-  )
-}
+        )}
+      </div>      
+    </>
+  );
+};
+
 export default Homepage;

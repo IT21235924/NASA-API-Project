@@ -1,10 +1,12 @@
+import React from 'react';
 import { Link } from "react-router-dom";
-import { SignInButton } from "@clerk/clerk-react";
+import { SignUpButton } from "@clerk/clerk-react";
 
-import COVER_IMAGE from "/signin.jpg";
+
 import NASA_LOGO from "/nasa.svg";
+import COVER_IMAGE from "/signup.jpg";
 
-const Home = () => {
+const SignUp = () => {
   return (
     <div className="grid grid-cols-2">
       <div>
@@ -15,10 +17,10 @@ const Home = () => {
         />
         <div className="absolute top-3/4 left-10">
           <h1 className="text-4xl text-white font-bold my-4">
-            Explore the Universe.
+            Welcome Aboard!
           </h1>
           <p className="text-xl text-white font-normal">
-            Unlock the Wonders of Space.
+            Create Your Account.
           </p>
         </div>
       </div>
@@ -30,25 +32,25 @@ const Home = () => {
         <div className="w-full flex flex-col max-w-[500px] mt-56">
           <div className="w-full flex flex-col mb-2 ">
             <h3 className="text-3xl font-semibold mb-2 flex items-center justify-center">
-              Sign In
+              Sign Up
             </h3>
             <p className="text-base mb-2 flex items-center justify-center">
-              Welcome Back! Please Sign In
+              Welcome! Please Sign In
             </p>
           </div>
 
           <div className="w-full flex-col my-4">
             <button className="w-full text-white my-2 font-semibold bg-[#0099ff] rounded-md p-4 text-center flex item-center justify-center">
-              <SignInButton mode="modal" forceRedirectUrl={'/'}/>
+              <SignUpButton mode="modal" forceRedirectUrl={'/'}/>
             </button>
           </div>
           <div className='w-full flex item-center justify-center'>
-                    <p className='text-sm font-normal'>First Time? <Link to='/signup'><span className='font-semibold text-[#0099ff] underline underline-offset-2 cursor-pointer'>Sign up here</span></Link></p>
-          </div>
+                    <p className='text-sm font-normal'>Already Sign Up ? <Link to='/signin'><span className='font-semibold text-[#0099ff] underline underline-offset-2 cursor-pointer'>Sign in here</span></Link></p>
+            </div>
         </div>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default Home;
+export default SignUp

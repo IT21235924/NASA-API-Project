@@ -2,6 +2,7 @@ import { useEffect, useState } from "react"
 import Fpart from "./components/MRP/Fpart"
 import Mpart from "./components/MRP/Mpart"
 import Spart from "./components/MRP/Spart"
+import Header from "./components/Header"
 
 function Mrp() {
 
@@ -45,6 +46,9 @@ function Mrp() {
   }, [])
   return (
     <>
+
+    <Header/>
+
     <div className="bodyRoot">
     {data ? (<Mpart data={data} />) : (
       <div className="loadingState">

@@ -11,10 +11,10 @@ const Header = () => {
             <img src={NASA_LOGO} alt="logo" className="w-20 h-10"/>
             <p className="text-xl font-semibold">NASA API Project</p>
         </div>
-        <div className="flex items-center gap-5">
+        <div className="flex items-center gap-10">
             <Link to='/'>Home</Link>
             <SignedOut>
-              <Link to='/signin'>Sign In</Link>
+              <Link to='/signin'>Sign In</Link>/<Link to='/signup'>Sign Up</Link>
             </SignedOut>
             <SignedIn>
               <UserButton/>
