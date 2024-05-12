@@ -1,7 +1,7 @@
 
 function Fpart(props:any) {
 
-  const { showModal, handleToggleModal, data} = props
+  const {handleToggleModal, data} = props
 
   return (
     <footer>

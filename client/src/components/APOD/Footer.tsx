@@ -1,8 +1,8 @@
-import React from 'react'
+// import React from 'react'
 
 const  Footer = (props:any) => {
 
-  const {showModel, handleToggleModel, data} = props
+  const {handleToggleModel, data} = props
 
   return (
     <footer>

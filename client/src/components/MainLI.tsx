@@ -1,9 +1,9 @@
-import { Swiper, SwiperSlide } from "swiper/react"
-import { FreeMode, Pagination } from "swiper/modules"
+// import { Swiper, SwiperSlide } from "swiper/react"
+// import { FreeMode, Pagination } from "swiper/modules"
 import 'swiper/css'
 import 'swiper/css/pagination'
 import 'swiper/css/free-mode'
-import { ServiceData } from "../constants/slide"
+// import { ServiceData } from "../constants/slide"
 import { Link } from "react-router-dom";
 
 import APOD from '/apod.jpg'

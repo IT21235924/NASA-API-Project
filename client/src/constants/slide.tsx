@@ -1,4 +1,4 @@
-import { RxCrop, RxDesktop, RxPencil2, RxReader, RxRocket, RxAccessibility,} from "react-icons/rx"
+import { RxCrop, RxDesktop, RxPencil2, RxReader,} from "react-icons/rx"
 
 import SpaceCity1 from "/signup.jpg"
 

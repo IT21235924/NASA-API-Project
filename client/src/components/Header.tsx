@@ -1,4 +1,4 @@
-import { SignedIn, SignedOut, RedirectToSignIn, SignInButton, UserButton } from "@clerk/clerk-react";
+import { SignedIn, SignedOut, UserButton } from "@clerk/clerk-react";
 
 
 import NASA_LOGO from "/nasa.svg";

@@ -1,4 +1,4 @@
-import { SignedIn, SignedOut, UserButton } from "@clerk/clerk-react";
+import { SignedIn, SignedOut} from "@clerk/clerk-react";
 
 import Header from "./components/Header";
 import MainLO from "./components/MainLO";

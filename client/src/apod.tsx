@@ -1,17 +1,17 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import Header from "./components/Header";
 import Gallery from "./components/APOD/Gallery";
 
 const Homepage = () => {
   const [data, setData] = useState(null);
-  const [loading, setLoading] = useState(false);
-  const [showModel, setShowModel] = useState(false);
+  // const [loading, setLoading] = useState(false);
+  // const [showModel, setShowModel] = useState(false);
   const [imagesUrl, setImagesUrl] = useState([]);
 
-  function handleToggleModel() {
-    console.log("toggle click");
-    setShowModel(!showModel);
-  }
+  // function handleToggleModel() {
+  //   console.log("toggle click");
+  //   setShowModel(!showModel);
+  // }
 
   useEffect(() => {
     async function fetchAPIData() {
